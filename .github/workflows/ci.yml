@@ -20,5 +20,6 @@ jobs:
           echo "Startup complete"          
       - name: Run some Tests against LocalStack
         run: |
+          terraform init
           terraform apply
           echo "Test Execution complete!"
