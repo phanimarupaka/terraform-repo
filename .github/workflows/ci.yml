@@ -25,5 +25,5 @@ jobs:
       - name: Run some Tests against LocalStack
         run: |
           terraform init
-          terraform apply
+          terraform apply --auto-approve
           echo "Test Execution complete!"
