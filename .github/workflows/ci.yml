@@ -24,7 +24,6 @@ jobs:
         uses: actions/checkout@v1
       - name: Run some Tests against LocalStack
         run: |
-          cd ~/work/terraform-repo/
           terraform init
           terraform apply
           echo "Test Execution complete!"
