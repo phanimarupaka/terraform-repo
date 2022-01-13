@@ -20,6 +20,5 @@ jobs:
           echo "Startup complete"          
       - name: Run some Tests against LocalStack
         run: |
-          awslocal s3 mb s3://test
-          awslocal s3 ls
+          terraform apply
           echo "Test Execution complete!"
