@@ -19,11 +19,17 @@ jobs:
           # Wait 30 seconds for the LocalStack container to become ready before timing out
           echo "Waiting for LocalStack startup..."
           localstack wait -t 30
-          echo "Startup complete"          
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v1
+          echo "Startup complete"
+      - name: Check out main
+        uses: actions/checkout@main
       - name: Run some Tests against LocalStack
         run: |
           terraform init
           terraform apply --auto-approve
-          echo "Test Execution complete!"
+          echo "Test Execution complete 1!"
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v1
+      - name: Run some Tests against LocalStack
+        run: |
+          terraform apply --auto-approve
+          echo "Test Execution complete 2!"
